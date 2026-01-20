@@ -2,20 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
 
 <body>
-
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -40,38 +28,235 @@
         <div class="hero-content">
             <h1 class="animate-text">Hello, I'm <span class="highlight">Mani Bharathi A</span></h1>
             <p class="animate-text delay-1">Cyber Security Enthusiast & Ethical Hacker</p>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <p>+91 9976286293</p>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <p>231cy027@gmail.com</p>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <p><a href="https://linkedin.com/in/manibharathi27" target="_blank">linkedin.com/in/manibharathi27</a>
-                </p>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-globe"></i>
-                <p>TryHackMe | PrecariousKing</p>
+            <div class="hero-buttons animate-text delay-2">
+                <a href="#contact" class="btn">Contact Me</a>
+                <a href="https://www.linkedin.com/in/manibharathi27" target="_blank" class="btn btn-outline"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
+        <div class="hero-bg-animation">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+        </div>
+    </section>
 
-        <form class="contact-form">
-            <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Career Objective</h3>
+                    <p>An Enthusiastic and passionate Ethical Hacking learner seeking a cybersecurity role in an
+                        innovative company. Committed to applying skills in real-world challenges while embracing
+                        continuous learning. Aiming to contribute to technological advancement and professional growth.
+                    </p>
+
+                    <div class="about-details">
+                        <div class="detail-column">
+                            <h4>Soft Skills</h4>
+                            <ul class="styled-list">
+                                <li>Team Leadership</li>
+                                <li>Adaptability</li>
+                                <li>Time Management</li>
+                                <li>Problem Solving</li>
+                            </ul>
+                        </div>
+                        <div class="detail-column">
+                            <h4>Hobbies</h4>
+                            <ul class="styled-list">
+                                <li>Learning new cybersecurity tools</li>
+                                <li>Playing Strategic games (Sudoku, Chess)</li>
+                                <li>Listening to Music</li>
+                                <li>Travelling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
         </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2026</div>
+                    <div class="timeline-content">
+                        <h3>B.Sc. Computer Science with Cyber Security</h3>
+                        <h4>Dr.N.G.P. Arts and Science College, Coimbatore</h4>
+                        <p>Affiliated to Bharathiar University</p>
+                        <span class="grade">Percentage: 75%</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <div class="timeline-content">
+                        <h3>Higher Secondary (HSC)</h3>
+                        <h4>Literacy Mission Matric Higher Secondary School, Tiruppur</h4>
+                        <p>State Board</p>
+                        <span class="grade">Percentage: 63%</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2021</div>
+                    <div class="timeline-content">
+                        <h3>Secondary School Leaving Certificate (SSLC)</h3>
+                        <h4>Literacy Mission Matric Higher Secondary School, Tiruppur</h4>
+                        <p>State Board</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-bug"></i>
+                    <h3>Burp Suite</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Autopsy</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Nessus</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Maltego</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Nmap & Gobuster</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Wireshark</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python & C</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship & Certifications -->
+    <section id="certifications" class="section bg-darker">
+        <div class="container">
+            <div class="dual-column-layout">
+                <div class="column">
+                    <h2 class="section-title-small">Internship</h2>
+                    <div class="card-box">
+                        <h3>Cyber Security Intern</h3>
+                        <h4>Prompt Infotech</h4>
+                        <p class="duration">21 Days</p>
+                        <p>Gained exposure to real-world security practice. Hands-on training with Kali Linux and
+                            scanning tools (Wireshark, Burp Suite).</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 class="section-title-small">Certifications</h2>
+                    <ul class="cert-list">
+                        <li>
+                            <i class="fas fa-certificate"></i>
+                            <span>C Basics for Beginners: Learn C Fundamentals by Coding – EBOX</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-certificate"></i>
+                            <span>Ethical Hacking – NPTEL (IIT Kanpur)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-certificate"></i>
+                            <span>Full Ethical Hacking & Penetration Testing Course – Udemy</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Nabha Healthcare Management System</h3>
+                        <p class="tech-stack">Next.js 14, React 18, PostgreSQL, Supabase, Twilio, Docker</p>
+                        <ul class="project-details">
+                            <li>Doctor Discovery & Booking System with advanced filters.</li>
+                            <li>Medicine Finder & Pharmacy Locator with price comparison.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>ATM Simulation System</h3>
+                        <p class="tech-stack">Visual Studio, Twilio (SMS), MySQL</p>
+                        <ul class="project-details">
+                            <li>Simulated ATM features like deposit, withdrawal, and balance check.</li>
+                            <li>Implemented secure PIN login and basic user authentication.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info-box">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 9976286293</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>231cy027@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p><a href="https://linkedin.com/in/manibharathi27"
+                                target="_blank">linkedin.com/in/manibharathi27</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <p>TryHackMe | PrecariousKing</p>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
