@@ -4,8 +4,10 @@
     --bg-alt: #111111;
     --text-main: #e0e0e0;
     --text-muted: #a0a0a0;
-    --accent-primary: #00f3ff; /* Neon Cyan */
-    --accent-secondary: #bc13fe; /* Neon Purple */
+    --accent-primary: #00f3ff;
+    /* Neon Cyan */
+    --accent-secondary: #bc13fe;
+    /* Neon Purple */
     --font-main: 'Inter', sans-serif;
     --font-mono: 'Roboto Mono', monospace;
     --transition: all 0.3s ease;
@@ -223,21 +225,55 @@ ul {
 }
 
 @keyframes glitch-anim {
-    0% { clip: rect(10px, 9999px, 30px, 0); }
-    20% { clip: rect(80px, 9999px, 100px, 0); }
-    40% { clip: rect(10px, 9999px, 50px, 0); }
-    60% { clip: rect(90px, 9999px, 120px, 0); }
-    80% { clip: rect(20px, 9999px, 60px, 0); }
-    100% { clip: rect(60px, 9999px, 90px, 0); }
+    0% {
+        clip: rect(10px, 9999px, 30px, 0);
+    }
+
+    20% {
+        clip: rect(80px, 9999px, 100px, 0);
+    }
+
+    40% {
+        clip: rect(10px, 9999px, 50px, 0);
+    }
+
+    60% {
+        clip: rect(90px, 9999px, 120px, 0);
+    }
+
+    80% {
+        clip: rect(20px, 9999px, 60px, 0);
+    }
+
+    100% {
+        clip: rect(60px, 9999px, 90px, 0);
+    }
 }
 
 @keyframes glitch-anim-2 {
-    0% { clip: rect(60px, 9999px, 90px, 0); }
-    20% { clip: rect(10px, 9999px, 40px, 0); }
-    40% { clip: rect(80px, 9999px, 110px, 0); }
-    60% { clip: rect(20px, 9999px, 50px, 0); }
-    80% { clip: rect(90px, 9999px, 120px, 0); }
-    100% { clip: rect(10px, 9999px, 30px, 0); }
+    0% {
+        clip: rect(60px, 9999px, 90px, 0);
+    }
+
+    20% {
+        clip: rect(10px, 9999px, 40px, 0);
+    }
+
+    40% {
+        clip: rect(80px, 9999px, 110px, 0);
+    }
+
+    60% {
+        clip: rect(20px, 9999px, 50px, 0);
+    }
+
+    80% {
+        clip: rect(90px, 9999px, 120px, 0);
+    }
+
+    100% {
+        clip: rect(10px, 9999px, 30px, 0);
+    }
 }
 
 .subtitle {
@@ -253,8 +289,15 @@ ul {
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .hero-summary {
@@ -492,15 +535,63 @@ ul {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 25px;
+    padding: 15px 30px;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    /* Pill shape for more modern look */
     transition: var(--transition);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.contact-btn:hover::before {
+    left: 100%;
 }
 
 .contact-btn:hover {
-    background: var(--accent-primary);
-    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: transparent;
+}
+
+/* Brand Colors on Hover */
+.contact-btn.email:hover {
+    background: #EA4335;
+    color: white;
+    box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
+}
+
+.contact-btn.linkedin:hover {
+    background: #0077b5;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+}
+
+.contact-btn.github:hover {
+    background: #333;
+    color: white;
+    box-shadow: 0 5px 15px rgba(51, 51, 51, 0.4);
+}
+
+.contact-btn.tryhackme:hover {
+    background: #88cc14;
+    /* TryHackMe Green */
+    color: #0a0a0a;
+    box-shadow: 0 5px 15px rgba(136, 204, 20, 0.4);
 }
 
 /* Footer */
@@ -517,9 +608,10 @@ footer {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .nav-links {
-        display: none; /* Mobile menu to be implemented with JS */
+        display: none;
+        /* Mobile menu to be implemented with JS */
         position: absolute;
         top: 70px;
         left: 0;
@@ -537,13 +629,15 @@ footer {
     .hamburger {
         display: block;
     }
-    
+
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
