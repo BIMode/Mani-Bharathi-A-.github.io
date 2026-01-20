@@ -2,57 +2,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links li');
 
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+
+        // Animate Links
+        links.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        // Hamburger Animation
+        hamburger.classList.toggle('toggle');
     });
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    // Close mobile menu when a link is clicked
+    links.forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            hamburger.classList.remove('toggle');
+            links.forEach(link => link.style.animation = '');
         });
     });
 
-    // Typing Effect
-    const typingText = document.querySelector('.typing-text');
-    const words = ['Cybersecurity Enthusiast', 'Ethical Hacker', 'Web Developer', 'Tech Learner'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100;
-
-    function type() {
-        const currentWord = words[wordIndex];
-
-        if (isDeleting) {
-            typingText.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-            typeSpeed = 50;
-        } else {
-            typingText.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-            typeSpeed = 100;
-        }
-
-        if (!isDeleting && charIndex === currentWord.length) {
-            isDeleting = true;
-            typeSpeed = 2000; // Pause at end of word
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            typeSpeed = 500; // Pause before new word
-        }
-
-        setTimeout(type, typeSpeed);
-    }
-
-    // Start typing effect
-    type();
-
-    // Smooth Scrolling for Anchor Links (Backup for older browsers)
+    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -62,18 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Animation
+    // Scroll Animations (Fade In Up)
+    const observerOptions = {
+        threshold: 0.1
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('animate-text');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.1
-    });
+    }, observerOptions);
 
-    document.querySelectorAll('.section').forEach(section => {
+    const sections = document.querySelectorAll('.section-title, .about-content, .skill-card, .project-card, .contact-form, .timeline-content, .card-box, .cert-list li');
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'all 0.6s ease-out';
         observer.observe(section);
     });
 });
